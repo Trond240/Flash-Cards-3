@@ -12,13 +12,13 @@ describe('Turn', function() {
   let card3;
   let card4;
 
-  beforeEach(() => {
+beforeEach(() => {
     card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     card2 = new Card(2, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     card3 = new Card(3, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
     card2 = new Card(4, 'What is Johns\'s favorite animal', ['Turkey', 'german shepard', 'capybara'], 'capybara');
     turn = new Turn('pug', card1);
-  });
+});
 
   it('should be a function', function() {
     expect(Turn).to.be.a('function');
@@ -45,8 +45,8 @@ describe('Turn methods', function() {
     expect(turn.evaluateGuess()).to.equal(false);
   })
 
-  it('should evaluate if the player guess is incorrect', function() {
-    turn.evaluateGuess();
+  it.skip('should evaluate if the player guess is incorrect', function() {
+    turn.evaluateGuess('sea otter');
     expect(turn.evaluateGuess()).to.equal(false);
   })
 
