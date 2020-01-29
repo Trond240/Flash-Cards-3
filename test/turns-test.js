@@ -30,22 +30,27 @@ describe('Turn', function() {
 
 describe('Turn methods', function() {
 
-  it.skip('should return the player guess', function() {
+  it('should return the player guess', function() {
     turn.returnGuess();
     expect(turn.returnGuess()).to.equal('pug');
   })
 
-  it.skip('should return the player card', function() {
+  it('should return the player card', function() {
     turn.returnCard();
-    expect(turn.returnCard()).to.deep.equal(card);
+    expect(turn.returnCard()).to.deep.equal(card1);
   })
 
-  it.skip('should evaluate if the player guess matches the correct answer', function() {
+  it('should evaluate if the player guess matches the correct answer', function() {
     turn.evaluateGuess();
     expect(turn.evaluateGuess()).to.equal(false);
   })
 
-  it.skip('should give feedback after guess that returns correct or incorrect on true or false', function() {
+  it('should evaluate if the player guess is incorrect', function() {
+    turn.evaluateGuess();
+    expect(turn.evaluateGuess()).to.equal(false);
+  })
+
+  it('should give feedback after guess that returns correct or incorrect on true or false', function() {
     expect(turn.giveFeedBack()).to.equal('Incorrect');
   })
 });
