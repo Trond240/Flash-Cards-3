@@ -20,7 +20,7 @@ describe('Deck', function() {
     expect(Deck).to.be.a('function');
   });
 
-  it('should instantiate a new deck', function() {
+  it('should be an instance of a deck', function() {
     expect(deck).to.be.an.instanceof(Deck);
   });
 
