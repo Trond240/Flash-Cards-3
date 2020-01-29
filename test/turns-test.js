@@ -20,6 +20,7 @@ beforeEach(() => {
     turn = new Turn('pug', card1);
 });
 
+
   it('should be a function', function() {
     expect(Turn).to.be.a('function');
   })
