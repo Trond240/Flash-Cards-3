@@ -1,9 +1,9 @@
 class Card {
-  constructor(id, question, answers, correctAnswers) {
+  constructor(id, question, answers, correctAnswer) {
     this.id = id;
-    this.question = question || 'What allows you to define a set of related information using key-value pairs?';
+    this.question = question;
     this.answers = answers;
-    this.correctAnswers = correctAnswers || 'object';
+    this.correctAnswer = correctAnswer;
   }
 }
 
