@@ -18,6 +18,8 @@
 
 - step2. Go to the directory where the file excist. cd flash-cards
 
-- step3. In order to run the game we need to put node index.js
+- step3. In order to run the game we need to run node index.js
+
+- step4. To exit the game- control + c
 
 ![flash-cards-recording.gif…]()
