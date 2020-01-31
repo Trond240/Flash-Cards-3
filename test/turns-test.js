@@ -5,19 +5,16 @@ const Turn = require('../src/Turn');
 const Card = require('../src/Card');
 
 describe('Turn', function() {
-
-  let turn;
   let card1;
   let card2;
-  let card3;
-  let card4;
+  let turn1;
+  let turn2;
 
 beforeEach(() => {
     card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     card2 = new Card(2, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
-    card3 = new Card(3, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
-    card2 = new Card(4, 'What is Johns\'s favorite animal', ['Turkey', 'german shepard', 'capybara'], 'capybara');
-    turn = new Turn('pug', card1);
+    turn1 = new Turn('pug', card1);
+    turn2 = new Turn('gallbladder', card2);
 });
 
   it('should be a function', function() {
@@ -25,33 +22,42 @@ beforeEach(() => {
   })
 
   it('should be an instance of a player Turn', function() {
-    expect(turn).to.be.an.instanceof(Turn);
+    expect(turn1).to.be.an.instanceof(Turn);
   });
 
 describe('Turn methods', function() {
 
   it('should return the player guess', function() {
-    turn.returnGuess();
-    expect(turn.returnGuess()).to.equal('pug');
+    turn1.returnGuess();
+    expect(turn1.returnGuess()).to.equal('pug');
   })
 
   it('should return the player card', function() {
-    turn.returnCard();
-    expect(turn.returnCard()).to.deep.equal(card1);
+    turn1.returnCard();
+    expect(turn1.returnCard()).to.deep.equal(card1);
   })
 
-  it('should evaluate if the player guess matches the correct answer', function() {
-    turn.evaluateGuess();
-    expect(turn.evaluateGuess()).to.equal(false);
+  it('should return the player card2', function() {
+    turn2.returnCard();
+    expect(turn2.returnCard()).to.deep.equal(card2);
   })
 
-  it.skip('should evaluate if the player guess is incorrect', function() {
-    turn.evaluateGuess('sea otter');
-    expect(turn.evaluateGuess()).to.equal(false);
+  it('should evaluate if the player guess is incorrect', function() {
+    turn1.evaluateGuess();
+    expect(turn1.evaluateGuess()).to.equal(false);
   })
 
-  it('should give feedback after guess that returns correct or incorrect on true or false', function() {
-    expect(turn.giveFeedBack()).to.equal('Incorrect');
+  it('should evaluate if the player guess is correct', function() {
+    turn2.evaluateGuess();
+    expect(turn2.evaluateGuess()).to.equal(true);
+  })
+
+  it('should give feedback after guess that returns incorrect false', function() {
+    expect(turn1.giveFeedBack()).to.equal('correct');
+  })
+
+  it('should give feedback after guess that returns correct true', function() {
+    expect(turn2.giveFeedBack()).to.equal('incorrect');
   })
 });
 });
