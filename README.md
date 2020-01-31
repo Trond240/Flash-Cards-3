@@ -22,4 +22,4 @@
 
 - step4. To exit the game- control + c
 
-![flash-cards-recording.gif…]()
+![D88EB4AB-4A79-4B97-818B-F47928DEC6C9_1_105_c](https://user-images.githubusercontent.com/49410633/73549856-5b13b980-443b-11ea-9067-df6dab1e83fd.jpeg)
